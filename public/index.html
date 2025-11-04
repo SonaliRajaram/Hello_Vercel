@@ -3,11 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello Vercel</title>
+  <title>Daily Motivation</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello from Vercel!</h1>
-  <p>This is a static HTML page served from the <code>public</code> folder.</p>
-  <p>Try visiting <a href="/api">/api</a> to see the Express API response.</p>
+  <div class="container">
+    <h1>🌟 Daily Motivation 🌟</h1>
+    <div class="quote-box">
+      <p id="quote">Click below to get inspired!</p>
+      <span id="author"></span>
+    </div>
+    <button id="new-quote">✨ New Quote</button>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ by <strong>Vercel Deployer</strong></p>
+  </footer>
+
+  <script>
+    const quotes = [
+      { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+      { text: "Dream big. Start small. Act now.", author: "Robin Sharma" },
+      { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+      { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+    ];
+
+    const quoteEl = document.getElementById('quote');
+    const authorEl = document.getElementById('author');
+    const btn = document.getElementById('new-quote');
+
+    btn.addEventListener('click', () => {
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.textContent = `"${random.text}"`;
+      authorEl.textContent = `— ${random.author}`;
+      quoteEl.classList.add('fade');
+      setTimeout(() => quoteEl.classList.remove('fade'), 600);
+    });
+  </script>
 </body>
 </html>
