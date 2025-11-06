@@ -3,26 +3,15 @@ It will generate a motivational quotes and is build to check the deployment of w
 
 ## Project Structure
 ```
-TaskBot-AI/
-├── templates/               
-    │-- chatbot.html          # HTML file for the chatbot interface  
-│-- chatbot.py            # Main Python script for chatbot logic  
-│-- config.py             # Configuration file for chatbot settings  
-│-- main.py               # Entry point for running the chatbot application
-│-- notification_email.py # Sending email via SMTP configuration
-│-- .env                  # Storing SMTP config details  
-│-- test_main.py          # Unit tests for chatbot functionalities  
-│-- validators.py         # Python script for input validation  
-│-- requirements.txt      # List of dependencies for the project  
+Hello_Vercel/
+├── api/               
+    │-- index.js           
+├── public/
+    |-- index.html               # UI
+    │-- style.css                # CSS file for styling                 
 │  
-├── CustomerChatbot/      # Virtual environment and dependencies  
-│  
-├── static/
-    ├── Images/               # Directory containing image assets
-    │-- chatbotScript.js      # JavaScript file for chatbot interactions  
-    │-- chatbotStyles.css     # CSS file for chatbot styling                 
-│  
-└── user_data.xlsx        # Excel file containing user data  
+└── vercel.json       # configuration file for vercel deployment
+├── package.json      # standard file in Node.js
 ```
 
 
